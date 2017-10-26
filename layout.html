@@ -1,0 +1,204 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Layout</title>
+		<style type="text/css">
+			html *{
+				padding: 0;
+				margin: 0;
+			}
+			.layout{
+				margin-top: 20px;
+			}
+			.layout article div{
+				min-height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--浮动-优点：兼容性高；缺点：浮动要清除，关系要处理好-->
+		<section class="layout float">
+			<style media="screen">
+				.layout.float .left{
+					float: left;
+					width: 300px;
+					background: red;
+				}
+				.layout.float .right{
+					float: right;
+					width: 300px;
+					background: blue;
+				}
+				.layout.float .center{
+					background: yellowgreen;
+				}
+			</style>
+			<article class="left-center-right">
+				<div class="left"></div>
+				<div class="right"></div>
+				<div class="center">
+					<h1>浮动解决方案</h1>
+					1. 这是三栏布局中间部分
+					2. 这是三栏布局中间部分
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+				</div>
+			</article>
+		</section>
+		
+		<!--绝对定位-优点：快捷；缺点：脱离文档流了，之后的元素也要脱离文档流，可使用性差-->
+		<section class="layout absolute">
+			<style type="text/css">
+				.layout.absolute .left-center-right>div{
+					position: absolute;
+				}
+				.layout.absolute .left{
+					left: 0;
+					width: 300px;
+					background: red;
+				}
+				.layout.absolute .right{
+					right: 0;
+					width: 300px;
+					background: blue;
+				}
+				.layout.absolute .center{
+					right: 300px;
+					left: 300px;				
+					background: green;
+				}
+				
+			</style>
+			<article class="left-center-right">
+				<div class="left"></div>
+				<div class="right"></div>
+				<div class="center">
+					<h2>绝对定位解决方案</h2>
+					1. 这是三栏布局中间部分
+					2. 这是三栏布局中间部分
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+				</div>
+			</article>
+		</section>
+		
+		<!--flex-css3出现，移动端，比较完美，不兼容IE8-->
+		<section class="layout flexbox">
+			<style>
+				.layout.flexbox{
+					margin-top: 150px;
+					}
+				.layout.flexbox .left-center-right{
+					display: flex;
+				}
+				.layout.flexbox .left{
+					width:300px;
+					background:red;
+				}
+				.layout.flexbox .center{
+					flex:1;
+					background: green;
+				}
+				.layout.flexbox .right{
+					width:300px;
+					background:yellow;
+				}
+				
+			</style>
+			<article class="left-center-right">
+				<div class="left"></div>
+				<div class="center">
+					<h1>flexbox解决方案</h1>
+					1. 这是三栏布局中间部分
+					2. 这是三栏布局中间部分
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+				</div>
+				<div class="right"></div>				
+			</article>
+		</section>
+		
+		<!--表格-优点：兼容性好，缺点：三栏，其中一个单元格高度超出，别的单元格也会调整-->	
+		<section class="layout table">
+			<style type="text/css">
+				.layout.table .left-center-right{
+					width: 100%;
+					display: table;
+					height: 100px;
+				}
+				.layout.table .left-center-right>div{
+					display: table-cell;
+				}
+				.layout.table .left{
+					width:300px;
+					background:red;
+				}
+				.layout.table .center{
+					background: green;
+				}
+				.layout.table .right{
+					width:300px;
+					background:blue;
+				}
+			</style>
+			<article class="left-center-right">
+				<div class="left"></div>
+				<div class="center">
+					<h1>表格布局</h1>
+					1. 这是三栏布局中间部分
+					2. 这是三栏布局中间部分
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+				</div>
+				<div class="right"></div>
+			</article>
+		</section>
+		
+		<!--网格-新技术-优点：代码量少，缺点：只兼容ie11+-->
+		<section class="layout grid">
+			<style type="text/css">
+				.layout.grid .left-center-right{
+					display: grid;
+					width:100%;					
+					grid-template-rows: 100px;
+					grid-template-columns:300px auto 300px;
+				}
+				.layout.grid .left{
+					background:red;
+				}
+				.layout.grid .center{
+					background: green;
+				}
+				.layout.grid .right{
+					background:blue;
+				}
+			</style>
+			<article class="left-center-right">
+				<div class="left"></div>
+				<div class="center">
+					<h1>网格布局</h1>
+					1. 这是三栏布局中间部分
+					2. 这是三栏布局中间部分
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+					<p>增加高度</p>
+				</div>
+				<div class="right"></div>
+			</article>
+		</section>
+	</body>
+</html>
